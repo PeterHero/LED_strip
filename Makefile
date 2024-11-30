@@ -1,5 +1,3 @@
-all: $(EXECUTABLE)
-
 .PHONY: upload set_port clean distclean
 
 BOARD := "arduino:avr:nano"
@@ -10,7 +8,9 @@ PORT_FILE := port.conf
 
 EXECUTABLE := $(OUTPUT_DIR)/$(PROJECT_NAME).ino.hex
 
-$(EXECUTABLE): $(PROJECT_NAME).ino *.h *.cpp
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(PROJECT_NAME).ino $(SRC_DIR)/*.h $(SRC_DIR)/*.cpp
 	arduino-cli compile -b $(BOARD) --output-dir $(OUTPUT_DIR)
 
 $(PORT_FILE):

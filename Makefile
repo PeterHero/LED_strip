@@ -8,7 +8,7 @@ OUTPUT_DIR := bin
 SRC_DIR := src
 PORT_FILE := port.conf
 
-EXECUTABLE := $(OUTPUT_DIR)/$(PROJECT_NAME).ino.elf
+EXECUTABLE := $(OUTPUT_DIR)/$(PROJECT_NAME).ino.hex
 
 $(EXECUTABLE): $(PROJECT_NAME).ino *.h *.cpp
 	arduino-cli compile -b $(BOARD) --output-dir $(OUTPUT_DIR)

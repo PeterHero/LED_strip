@@ -18,7 +18,7 @@ if ! ls /dev/rfcomm0 >/dev/null 2>&1 ; then
     sudo chmod o+rw /dev/rfcomm0
 fi
 
-echo "Connected"
-echo "start" > /dev/rfcomm0
+echo "$1"
+echo "$1" > /dev/rfcomm0
 
 # write commands to the device
